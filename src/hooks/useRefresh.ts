@@ -12,8 +12,7 @@ const useRefreshToken = () => {
 
     const refresh = async () => {
         const response: IResponse = await api.get('/refresh', {
-            // withCredentials: true
-            
+            withCredentials: true
         });
 
         const accessToken = response.data.accessToken;
