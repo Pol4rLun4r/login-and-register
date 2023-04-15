@@ -68,8 +68,8 @@ const Form = () => {
     // fetch login User
     const loginUser = async (data: IUser) => {
         const response = await api.post('/login', data, {
-            // headers: { 'Content-Type': 'application/json' },
-            // withCredentials: true
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true
         });
         return response.data
     };
