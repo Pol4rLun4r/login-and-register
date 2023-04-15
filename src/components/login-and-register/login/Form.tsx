@@ -85,7 +85,8 @@ const Form = () => {
             setAuth({ username, password, role, accessToken });
 
             // redirect
-            const from = location.state?.from?.pathname || "/";
+            // const from = location.state?.from?.pathname || "/";
+            const from = "/admin";
             setTimeout(() => {
                 navigate(from, { replace: true });
             }, 1000);
