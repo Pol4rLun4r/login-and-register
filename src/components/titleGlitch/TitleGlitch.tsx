@@ -1,14 +1,14 @@
 import GlitchedWriter, { wait } from "glitched-writer"
-import TitleStyle from "../style/Title";
+import TitleStyle from "./style/Title"
 
-import "../style/glitch.scss"
+import "./style/glitch.scss"
 
 interface ITitle {
     Title: string
     InitTitle?: string
 }
 
-const H1 = ({ Title, InitTitle }: ITitle) => {
+const TitleGlitch = ({ Title, InitTitle }: ITitle) => {
 
     setTimeout(() => {
         const Writer = new GlitchedWriter("#glitch", { letterize: true });
@@ -29,4 +29,4 @@ const H1 = ({ Title, InitTitle }: ITitle) => {
     )
 }
 
-export default H1
+export default TitleGlitch;

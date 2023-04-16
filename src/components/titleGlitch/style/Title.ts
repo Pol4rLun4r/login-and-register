@@ -1,28 +1,18 @@
 import styled from "styled-components";
 import { device } from "../../../globalStyles/Devices.util";
 
-export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 40px;
-`
-
-export const IconStyle = styled.img`
-    margin-bottom: 2px;
+const TitleStyle = styled.div`
 
     @media ${device.mobileS}{
-        width: 40px;
+        font-size: 20px;
     }
 
     @media ${device.mobileM}{
-
+        font-size: 25px;
     }
 
     @media ${device.mobileL}{
-        width: 45px;
+        font-size: 30px;
     }
 
     @media ${device.myMobile}{
@@ -30,7 +20,7 @@ export const IconStyle = styled.img`
     }
 
     @media ${device.mobile500px}{
-        width: 50px;
+        font-size: 35px;
     }
 
     @media ${device.mobile600px}{
@@ -38,10 +28,8 @@ export const IconStyle = styled.img`
     }
 
     @media ${device.tablet}{
-        width: 55px;
+        font-size: 40px;
     }
 `
 
-export const Text = styled.h1`
-    font-size: 20px;
-`
+export default TitleStyle

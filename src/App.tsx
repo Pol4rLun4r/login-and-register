@@ -19,6 +19,7 @@ import NotFound from "./routes/others/NotFound";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import PrivateRoute from "./routes/others/PrivateRoute";
+import PersistLogin from "./components/login-and-register/login/persistLogin/PersistLogin";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -41,27 +42,29 @@ const App = () => {
         />
 
         {/* private routes for user  */}
-        <Route element={<PrivateRoute />}>
-          <Route
-            path="/"
-            element={<Root />}
-            errorElement={<NotFound />}
-          >
+        <Route element={<PersistLogin />}>
+          <Route element={<PrivateRoute />}>
             <Route
-              index={true}
-              element={<Home />}
-            />
-            <Route
-              path="user"
-              element={<User />}
-            />
-
-            {/* private routes for admin */}
-            <Route element={<PrivateRoute allowedRole={["ADMIN"]} />}>
+              path="/"
+              element={<Root />}
+              errorElement={<NotFound />}
+            >
               <Route
-                path="/admin"
-                element={<Admin />}
+                index={true}
+                element={<Home />}
               />
+              <Route
+                path="user"
+                element={<User />}
+              />
+
+              {/* private routes for admin */}
+              <Route element={<PrivateRoute allowedRole={["ADMIN"]} />}>
+                <Route
+                  path="/admin"
+                  element={<Admin />}
+                />
+              </Route>
             </Route>
           </Route>
         </Route>
@@ -69,7 +72,7 @@ const App = () => {
         {/* catch errors */}
         <Route
           path="/*"
-          element={<NotFound/>}
+          element={<NotFound />}
         />
       </>
     )

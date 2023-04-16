@@ -1,9 +1,13 @@
-import H1 from "../../components/test/@h1";
+import Layout from "../../components/layouts/Layout";
+
+import Title from "../../components/titleGlitch/TitleGlitch";
+
 
 const Home = () => {
-  
   return (
-    <H1 Title="home" InitTitle="welcome" />
+    <Layout>
+      <Title Title="home" InitTitle="welcome" />
+    </Layout>
   )
 }
 

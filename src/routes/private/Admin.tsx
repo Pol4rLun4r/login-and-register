@@ -1,14 +1,17 @@
-import H1 from "../../components/test/@h1"
-import useRefreshToken from "../../hooks/useRefresh"
+import LayoutAdmin from './../../components/layouts/LayoutAdmin';
+import SignOut from "../../components/signOut/SignOut";
+import Title from '../../components/admin-and-user/@Title/Title';
+import Users from '../../components/admin-and-user/admin/Users';
 
 const Admin = () => {
-  const refresh = useRefreshToken();
 
   return (
     <>
-      {/* <H1 Title="admin" InitTitle="welcome" /> */}
-      <br />
-      <button onClick={() => refresh()}>refresh</button>
+      <LayoutAdmin>
+        <Title title='admin' initTitle='welcome' />
+        <Users />
+        <SignOut />
+      </LayoutAdmin>
     </>
   )
 }

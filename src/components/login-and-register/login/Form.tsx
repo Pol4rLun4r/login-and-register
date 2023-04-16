@@ -14,13 +14,16 @@ import Schema from "./Schema";
 type loginUserFormData = z.infer<typeof Schema>;
 
 //api
-import api from "../../../services/api";
+import { api } from "../../../services/api";
 import { UseMutateFunction, useMutation } from "react-query";
 
 // Context
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+
+// persist login
+import PersistCheckbox from "./persistCheckbox";
 
 interface IUser {
     username: string
@@ -45,7 +48,8 @@ interface IUserData {
 }
 
 const Form = () => {
-    const { setAuth } = useAuth()
+
+    const { setAuth } = useAuth();
 
     // get username and password
     const [username, setUsername] = useState('');
@@ -121,6 +125,7 @@ const Form = () => {
                             nameRegister="password"
                             error={errors.password && <p>{errors.password.message}</p>}
                         />
+                        <PersistCheckbox />
                         <Button isValid={isValid} type="submit" >sign in</Button>
                         {isError && error.response && <ErrorMsg>{error?.response?.data?.message}</ErrorMsg>}
                         {isError && !error?.response?.data?.message && <ErrorMsg>{error.message}</ErrorMsg>}

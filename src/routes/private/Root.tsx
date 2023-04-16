@@ -1,7 +1,8 @@
-import GlobalStyle from "../../globalStyles/GlobalStyle"
-import Noise from "../../globalStyles/Noise"
-import Main from "../../components/test/style/Main"
-import { Outlet } from "react-router-dom"
+import GlobalStyle from "../../globalStyles/GlobalStyle";
+import Noise from "../../globalStyles/Noise";
+import Main from "../../components/test/Main";
+import { Outlet } from "react-router-dom";
+import NavBar from "../../components/navBar/NavBar";
 
 const Root = () => {
     return (
@@ -9,10 +10,11 @@ const Root = () => {
             <GlobalStyle />
             <Noise />
             <Main>
+            <NavBar/>
                 <Outlet />
             </Main>
         </>
     )
 }
 
-export default Root
+export default Root;

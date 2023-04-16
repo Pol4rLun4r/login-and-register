@@ -14,8 +14,13 @@ import Schema from "./Schema";
 type registerUserFormData = z.infer<typeof Schema>;
 
 //api
-import api from "../../../services/api";
+import { api } from "../../../services/api";
 import { UseMutateFunction, useMutation } from "react-query";
+
+// Context
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 interface IUser {
     username: string
@@ -34,11 +39,23 @@ interface IError {
 interface IUserData {
     user: {
         id: string
+        role: string
     }
     accessToken: string
 }
 
 const Form = () => {
+
+    const { setAuth } = useAuth();
+
+    // get username and password
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const handleChange = (data: HTMLCollection | null | any) => {
+        setUsername(data[0][0].value);
+        setPassword(data[0][1].value);
+    }
+
     // hook form
     const methods = useForm<registerUserFormData>({ resolver: zodResolver(Schema) })
     const {
@@ -49,16 +66,30 @@ const Form = () => {
         }
     } = methods;
 
-    // // fetch crete User
+    // // fetch create User
     const createUser = async (data: IUser) => {
-        const response = await api.post('/user', data);
+        const response = await api.post('/user', data, {
+            headers: { 'Content-Type': 'application/json' },
+            withCredentials: true
+        });
         return response.data
     }
 
+    const navigate = useNavigate()
+    const location = useLocation();
+
     // react query function
     const { mutate, isError, error, isSuccess, isLoading }: IError = useMutation(createUser, {
-        onSuccess: (data: IUser) => {
-            console.log(data);
+        onSuccess: (data: IUserData) => {
+            const accessToken = data.accessToken;
+            const role = data.user.role;
+            setAuth({ username, password, role, accessToken });
+
+            // redirect
+            const from = "/";
+            setTimeout(() => {
+                navigate(from, { replace: true });
+            }, 1000);
         },
     })
 

@@ -1,7 +1,8 @@
 import Main from "../../components/login-and-register/style/Main"
-import H1 from "../../components/test/@h1"
+import H1 from "../../components/titleGlitch/TitleGlitch"
 import GlobalStyle from "../../globalStyles/GlobalStyle"
 import Noise from "../../globalStyles/Noise"
+import BackToHome from "../../components/backToHome/BackToHome"
 
 const Unauthorized = () => {
   return (
@@ -9,7 +10,8 @@ const Unauthorized = () => {
       <GlobalStyle />
       <Noise />
       <Main>
-        <H1 Title="unauthorized" InitTitle="error"/>
+        <H1 Title="unauthorized" InitTitle="error" />
+        <BackToHome />
       </Main>
     </>
   )

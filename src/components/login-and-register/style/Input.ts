@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../globalStyles/Devices.util";
 
 interface IinputCheck {
     focused: boolean
@@ -7,11 +8,38 @@ interface IinputCheck {
 
 export const Container = styled.div`
     margin-bottom: 40px;
-    width: 25vw;
 
     p{
         font-size: 11px;
         font-family: monospace;
+    }
+
+    @media ${device.mobileS}{
+        width: 55vw;
+    }
+
+    @media ${device.mobileM}{
+
+    }
+
+    @media ${device.mobileL}{
+
+    }
+
+    @media ${device.myMobile}{
+
+    }
+
+    @media ${device.mobile500px}{
+        width: 50vw;
+    }
+
+    @media ${device.mobile600px}{
+        width: 40vw;
+    }
+
+    @media ${device.tablet}{
+        width: 270px;
     }
 `
 
