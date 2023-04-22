@@ -7,8 +7,10 @@ interface IUser {
 }
 
 const Info = ({ title, data }: IUser) => {
-    const _id = title + new Date().getMilliseconds();
+    const _id = title + Date.now() + Math.floor(Math.random() * 100);
 
+    console.log(_id);
+    
     return (
         <div>
             <Title>{title}:</Title>
