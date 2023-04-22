@@ -1,15 +1,16 @@
 import Layout from "../../components/layouts/Layout"
 import SignOut from "../../components/signOut/SignOut"
 import Title from "../../components/admin-and-user/@Title/Title"
-import useAuth from "../../hooks/useAuth"
+import InfoText from "../../components/admin-and-user/@InfoText/InfoText"
+import UserInfo from "../../components/admin-and-user/user/UserInfo"
 
 const User = () => {
-  const { auth }: any = useAuth();
-  const username = auth?.username
 
   return (
     <Layout>
-      <Title title={username} />
+      <Title title='test user page' />
+      <InfoText />
+      <UserInfo/>
       <SignOut />
     </Layout>
   )

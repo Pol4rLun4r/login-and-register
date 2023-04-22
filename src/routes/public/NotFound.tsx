@@ -1,16 +1,17 @@
-import H1 from "../../components/titleGlitch/TitleGlitch"
 import BackToHome from "../../components/backToHome/BackToHome"
 import LayoutPublic from "../../components/layouts/LayoutPublic"
+import Title from "../../components/textGlitchs/notfound/TitleGlitch"
 
-const Unauthorized = () => {
+const NotFound = () => {
+
   return (
     <>
       <LayoutPublic>
-        <H1 Title="unauthorized" InitTitle="error" />
+        <Title/>
         <BackToHome />
       </LayoutPublic>
     </>
   )
 }
 
-export default Unauthorized
+export default NotFound

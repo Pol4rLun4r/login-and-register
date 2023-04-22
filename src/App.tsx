@@ -6,14 +6,14 @@ import Login from "./routes/public/Login";
 import Register from "./routes/public/Register";
 import Unauthorized from "./routes/public/Unauthorized";
 
-// protect routes
+// private routes
 import Root from "./routes/private/Root";
 import Home from "./routes/private/Home";
 import Admin from "./routes/private/Admin";
 import User from "./routes/private/User";
 
 // errors
-import NotFound from "./routes/others/NotFound";
+import NotFound from "./routes/public/NotFound";
 
 // react query
 import { QueryClient, QueryClientProvider } from "react-query";

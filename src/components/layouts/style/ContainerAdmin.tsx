@@ -8,7 +8,6 @@ const ContainerStyle = styled(motion.div)`
     height: 87%;
 
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 

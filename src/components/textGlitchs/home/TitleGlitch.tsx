@@ -3,17 +3,17 @@ import TitleStyle from "./style/Title"
 
 import "./style/glitch.scss"
 
-interface ITitle {
-    Title: string
-    InitTitle?: string
-}
 
-const TitleGlitch = ({ Title, InitTitle }: ITitle) => {
+const TitleGlitch = () => {
 
     setTimeout(() => {
         const Writer = new GlitchedWriter("#glitch", { letterize: true });
         (async () => {
-            await Writer.write(Title);
+            await wait(1200)
+            await Writer.write('to');
+
+            await wait(500)
+            await Writer.write('the library');
         })()
     }, 100);
 
@@ -21,7 +21,7 @@ const TitleGlitch = ({ Title, InitTitle }: ITitle) => {
         <>
             <div className="div">
                 <TitleStyle className="text" id="glitch">
-                    {InitTitle && InitTitle}
+                    welcome
                 </TitleStyle>
             </div>
         </>

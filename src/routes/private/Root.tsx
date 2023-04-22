@@ -1,8 +1,8 @@
 import GlobalStyle from "../../globalStyles/GlobalStyle";
 import Noise from "../../globalStyles/Noise";
-import Main from "../../components/test/Main";
-import { Outlet } from "react-router-dom";
+import Main from "../../components/layouts/style/Main";
 import NavBar from "../../components/navBar/NavBar";
+import { Outlet } from "react-router-dom";
 
 const Root = () => {
     return (

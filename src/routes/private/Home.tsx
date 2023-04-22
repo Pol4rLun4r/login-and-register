@@ -1,12 +1,11 @@
 import Layout from "../../components/layouts/Layout";
-
-import Title from "../../components/titleGlitch/TitleGlitch";
+import Title from "../../components/textGlitchs/home/TitleGlitch";
 
 
 const Home = () => {
   return (
     <Layout>
-      <Title Title="home" InitTitle="welcome" />
+      <Title />
     </Layout>
   )
 }
