@@ -16,7 +16,7 @@ Este pequeno projeto é apenas uma pequena demo e teste, para um outro projeto q
 
 ## 💻 Projeto
 
-Este projeto foi pensando e construído pensando em como criar validações e autenticações de usuário, visando a ideia básica de uma tela de "login" ou de "register", tambem usei a oportunidade para fazer rotas privadas baseada nos dados fornecidos no "login", ele contém as seguintes funcionalidades: 
+Este projeto foi pensado e construído pensando em como criar validações e autenticações de usuário, visando a ideia básica de uma tela de "login" ou de "register", tambem usei a oportunidade para fazer rotas privadas baseada nos dados fornecidos no "login", ele contém as seguintes funcionalidades: 
 
 - [x] Registrar um novo usuário e apontar possíveis erros durante o registro.
 - [x] Autenticar o usuário e apontar possíveis erros no "login".
@@ -24,8 +24,8 @@ Este projeto foi pensando e construído pensando em como criar validações e au
 
 **extra:** 
 
-- [x] uma pagina chamada "admin" que pega todos os usuários e mostra na tela (precisa estar validado como "admin" para acessar).
-- [x] uma página de usuário simples para testar o "fetch" de informações baseado na autenticação.
+- [x] Uma pagina chamada "admin" que pega todos os usuários e mostra na tela (precisa estar validado como "admin" para acessar).
+- [x] Uma página de usuário simples para testar o "fetch" de informações baseado na autenticação.
 
 ### 📸 Imagens
 
